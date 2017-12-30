@@ -69,7 +69,8 @@ New-BinaryGist -path pirate_map.png -description 'Secret Map'
     ) {
       return
     }
-   
+    $ConfirmPreference = 'None'
+    
     # Create a gist with placeholder file with a text content as required by Github API
     try {
       $gist = New-Gist -path $placeholder -description $Description
