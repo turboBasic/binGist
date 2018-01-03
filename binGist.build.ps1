@@ -7,10 +7,19 @@
 
 #>
 
+$moduleName = Split-Path -path $buildRoot -leaf
+
+Enter-Build {
+    # $script:moduleName = Split-Path -path $binRoot -leaf
+    "Module Name = $moduleName"
+}
+
 
 task InstallDependencies  {
     "Inside InstallDependencies task"
-    
+
+    #Invoke-PSDepend -path (Join-Path -path $buildRoot -childPath "$moduleName.depend.ps1") -verbose
+    Invoke-PSDepend -verbose
 }
 
 task Clean  {
@@ -30,7 +39,7 @@ task Build  {
     "Inside Build task"
 }
 
-task .      InstallDependencies, Clean, Analyze, Test, Build 
+task .      InstallDependencies, Clean, Analyze, Test, Build
 
 
 <#
