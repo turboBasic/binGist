@@ -1,7 +1,8 @@
 #Requires -Version 5.0
 
-$whatIf = $True
 
+# PSDepend:     0.1.62
+# Invoke-Build: 5.0.0
 
 'PSDepend', 'InvokeBuild' |
 ForEach-Object {
@@ -13,9 +14,4 @@ ForEach-Object {
     }
 }
 
-$myModule = Split-Path -path $psScriptRoot -leaf
-Write-Host "myModule: $myModule"
-$buildScript = Join-Path -path $psScriptRoot -childPath "$myModule.build.ps1"
-Write-Host "buildScript: $buildScript"
-#Invoke-Build -file $buildScript -verbose
 Invoke-Build -verbose

@@ -1,10 +1,12 @@
+# Using module PSGist
+
 # Constants
 
 #region     Inject all functions
 $Public = $Private = $PrivateModules = @()
-$Public  += (Get-ChildItem $PSScriptRoot\Public\*.ps1 -ErrorAction SilentlyContinue).FullName
-$Private += (Get-ChildItem $PSScriptRoot\Private\*.ps1 -ErrorAction SilentlyContinue).FullName
-$PrivateModules += (Get-ChildItem $PSScriptRoot\Private -Directory -ErrorAction SilentlyContinue).FullName
+$Public  +=         (Get-ChildItem $PSScriptRoot\Public\*.ps1 -ErrorAction SilentlyContinue).FullName
+$Private +=         (Get-ChildItem $PSScriptRoot\Private\*.ps1 -ErrorAction SilentlyContinue).FullName
+$PrivateModules +=  (Get-ChildItem $PSScriptRoot\Private -Directory -ErrorAction SilentlyContinue).FullName
 
 foreach ($importFile in $Private + $Public) {
     try     {

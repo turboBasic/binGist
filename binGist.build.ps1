@@ -7,39 +7,64 @@
 
 #>
 
-$moduleName = Split-Path -path $buildRoot -leaf
+#$moduleName = Split-Path -path $buildRoot -leaf
 
 Enter-Build {
-    # $script:moduleName = Split-Path -path $binRoot -leaf
-    "Module Name = $moduleName"
+    $script:moduleName = Split-Path -path $buildRoot -leaf
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)] Module Name = $moduleName"
 }
 
-
+# .Synopsis: Install all dependencies specified in module.depend.psd1
 task InstallDependencies  {
-    "Inside InstallDependencies task"
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)] InstallDependencies task"
 
-    #Invoke-PSDepend -path (Join-Path -path $buildRoot -childPath "$moduleName.depend.ps1") -verbose
     Invoke-PSDepend -verbose
 }
 
+
+# .Synopsis: Clean all build artifacts
 task Clean  {
-    "Inside Clean task"
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)] Clean task"
 }
 
 
+# .Synopsis: Invoke psScriptAnalyzer for the code
 task Analyze  {
-    "Inside Analyze task"
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)] Analyze task"
+
+    $scriptAnalyzerParams = @{
+        Path =          "$buildRoot\$moduleName\"
+        Severity =      'Error', 'Warning'
+        Recurse =       $True
+        Verbose =       $False
+        # ExcludeRule =   'psUseDeclaredVarsMoreThanAssignments'
+    }
+
+    return $True
+
+    $saResults = Invoke-ScriptAnalyzer @scriptAnalyzerParams
+
+    if ($saResults) {
+        $saResults | Format-Table
+        throw "One or more PSScriptAnalyzer errors/warnings where found"
+    }
 }
 
+
+# .Synopsis: Run all Pester tests
 task Test  {
-    "Inside Test task"
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)] Test task"
 }
 
+# .Synopsis: Build and create artifacts
 task Build  {
-    "Inside Build task"
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)] Build task"
 }
 
-task .      InstallDependencies, Clean, Analyze, Test, Build
+# .Synopsis: default task
+task .      {
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)] Default task"
+}, InstallDependencies, Clean, Analyze, Test, Build
 
 
 <#
