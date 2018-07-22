@@ -16,13 +16,14 @@ environment:
 install:
   - ps: Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.208 -Force
   - ps: Set-PackageSource -Name Nuget.org -Trusted
-  - ps: Install-Module BuildHelpers -minimumVersion 1.1.0
-  - ps: Install-Module PSDepend -minimumVersion 0.2.5
-  - ps: Install-Module PSake -minimumVersion 4.7
-  - ps: Install-Module PSScriptAnalyzer -minimumVersion 1.17.0
-  - ps: Install-Module PSDeploy -minimumVersion 0.2.5
-  - ps: Install-Module Pester -maximumVersion 3.4.0 -SkipPublisherCheck
-  - ps: Install-Module PSGist -minimumVersion 2.0
+  - ps: Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+  - ps: Install-Module BuildHelpers -minimumVersion 1.1.0 -force
+  - ps: Install-Module PSDepend -minimumVersion 0.2.5 -force
+  - ps: Install-Module PSake -minimumVersion 4.7 -force
+  - ps: Install-Module PSScriptAnalyzer -minimumVersion 1.17.0 -force
+  - ps: Install-Module PSDeploy -minimumVersion 0.2.5 -force
+  - ps: Install-Module Pester -maximumVersion 3.4.0 -SkipPublisherCheck -force
+  - ps: Install-Module PSGist -minimumVersion 2.0 -force
 
 # Allow WMF5 (i.e. PowerShellGallery functionality)
 os: WMF 5
