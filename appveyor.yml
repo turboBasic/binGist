@@ -24,6 +24,7 @@ install:
   - ps: Install-Module PSDeploy -minimumVersion 0.2.5 -force
   - ps: Install-Module Pester -maximumVersion 3.4.0 -SkipPublisherCheck -force
   - ps: Install-Module PSGist -minimumVersion 2.0 -force
+  - ps: Using Module PSGist
 
 # Allow WMF5 (i.e. PowerShellGallery functionality)
 os: WMF 5
