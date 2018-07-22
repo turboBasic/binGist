@@ -31,7 +31,7 @@ Describe "General project validation: $moduleName" {
 
 
 
-
+<#
 Describe "Validate New-BinaryGist" { 
     Context "Invoke-ScriptAnalyzer -Path $(Resolve-Path -Path (Get-Location))\Public\New-BinaryGist.ps1." {
         $results = Invoke-ScriptAnalyzer -Path .\binGist\Public\New-BinaryGist.ps1
@@ -41,3 +41,4 @@ Describe "Validate New-BinaryGist" {
         }
     }
 }
+#>
