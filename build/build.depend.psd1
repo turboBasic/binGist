@@ -2,7 +2,7 @@
     # Some defaults for all dependencies
     PSDependOptions = @{
         Parameters = @{
-            Force = $true
+
         }
     }
 

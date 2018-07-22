@@ -2,7 +2,7 @@
     RootModule = 'binGist.psm1'
     Author = 'Andriy Melnyk <mao@bebee.xyz>'
     CompanyName = 'Cargonautica'
-    ModuleVersion = '0.1'
+    ModuleVersion = '0.1.1'
     GUID = '79e010c5-4c3d-4875-917a-172243336e28'
     Copyright = '2018 Andriy Melnyk'
     Description = "create Github gist with binary content #powershell #gists"
