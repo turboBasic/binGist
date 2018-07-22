@@ -9,10 +9,11 @@
     # Grab some modules without depending on PowerShellGet
     'Psake' = @{ DependencyType = 'PSGalleryModule' }
     'PSDeploy' = @{ DependencyType = 'PSGalleryModule' }
+	'PSScriptAnalyzer' = @{ DependencyType = 'PSGalleryModule' }
     'BuildHelpers' = @{ DependencyType = 'PSGalleryModule' }
     'Pester' = @{
         DependencyType = 'PSGalleryModule'
-        Version = '4.3.1'
+        Version = '3.4.0'
         SkipPublisherCheck = $true
     }
 }

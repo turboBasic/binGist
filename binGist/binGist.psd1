@@ -8,6 +8,7 @@
     Description = "create Github gist with binary content #powershell #gists"
     PowerShellVersion = '5.1.0.0'
     CompatiblePSEditions = @('Desktop', 'Core')
+	RequiredModules = @( @{ ModuleName = 'PSGist'; ModuleVersion = '2.0' } )
     FunctionsToExport = '*'
     AliasesToExport = @('')
     VariablesToExport = @('')

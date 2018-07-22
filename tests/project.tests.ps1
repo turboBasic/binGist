@@ -15,16 +15,16 @@ Describe "General project validation: $moduleName" {
     It "Script <file> should be valid powershell" -TestCases $testCase {
         Param( $file )
 
-        $file.FullName | Should -Exist
+        $file.FullName | Should Exist
 
         $contents = Get-Content -Path $file.FullName -ErrorAction Stop
         $errors = $null
         $null = [System.Management.Automation.PSParser]::Tokenize( $contents, [ref] $errors )
-        $errors.Count | Should -Be 0
+        $errors.Count | Should Be 0
     }
 
     It "Module '$moduleName' can import cleanly" {
-        {Import-Module (Join-Path $moduleRoot "$moduleName.psm1") -force } | Should -Not -Throw
+        {Import-Module (Join-Path $moduleRoot "$moduleName.psm1") -force } | Should Not Throw
     }
 }
 
