@@ -1,3 +1,4 @@
+Using Module PSGist
 $projectRoot = Resolve-Path $PSScriptRoot\..
 $moduleRoot = Split-Path (Resolve-Path $projectRoot\*\*.psm1)
 $moduleName = Split-Path $moduleRoot -Leaf
@@ -33,7 +34,6 @@ Describe "General project validation: $moduleName" {
 
 Describe "Validate New-BinaryGist" { 
     Context "Invoke-ScriptAnalyzer -Path $(Resolve-Path -Path (Get-Location))\Public\New-BinaryGist.ps1." {
-		Using Module PSGist
         $results = Invoke-ScriptAnalyzer -Path .\binGist\Public\New-BinaryGist.ps1
 
         It "Invoke-ScriptAnalyzer results of New-BinaryGist should be 0." {
