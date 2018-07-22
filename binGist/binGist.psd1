@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule = 'binGist.psm1'
     Author = 'Andriy Melnyk <mao@bebee.xyz>'
     CompanyName = 'Cargonautica'
@@ -9,7 +9,7 @@
     PowerShellVersion = '5.1.0.0'
     CompatiblePSEditions = @('Desktop', 'Core')
 	RequiredModules = @( @{ ModuleName = 'PSGist'; ModuleVersion = '2.0' } )
-    FunctionsToExport = '*'
+    FunctionsToExport = @('New-BinaryGist')
     AliasesToExport = @('')
     VariablesToExport = @('')
     PrivateData = @{
