@@ -5,7 +5,7 @@ skip_commits:
     - '**/*.yml'
 
 image:
-- Visual Studio 2015
+- Visual Studio 2017
 
 environment:
   NugetApiKey:
@@ -14,13 +14,14 @@ environment:
     secure: 2Lyii63Fi8aSnNDcC0cQaR11wrlpcpcs7/3+YBIdYupzpJRiD2F1gzJEJbgdrCLb
 
 install:
-  - ps: Install-Module PSGist -minimumVersion 2.0
+  - ps: Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.208 -Force
   - ps: Install-Module BuildHelpers -minimumVersion 1.1.0
   - ps: Install-Module PSDepend -minimumVersion 0.2.5
   - ps: Install-Module PSake -minimumVersion 4.7
   - ps: Install-Module PSScriptAnalyzer 1.17.0
   - ps: Install-Module PSDeploy -minimumVersion 0.2.5
   - ps: Install-Module Pester -maximumVersion 3.4.0 -SkipPublisherCheck]
+  - ps: Install-Module PSGist -minimumVersion 2.0
 
 # Allow WMF5 (i.e. PowerShellGallery functionality)
 os: WMF 5
