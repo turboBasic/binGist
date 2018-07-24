@@ -14,6 +14,14 @@ create Github gist with binary content #powershell #gist
 `Install-Module -Name binGist`
 
 
+## Dependencies
+
+1. [Git](https://git-scm.com/about)
+2. [Github](https://github.com/about)
+3. [Powershell/Powershell](https://github.com/PowerShell/PowerShell)
+4. [PSGist](https://github.com/dotps1/PSGist)
+
+
 ## Releases
 
 History of releases and all downloads are available at [Powershell Gallery]( https://www.preview.powershellgallery.com/packages/binGist )
