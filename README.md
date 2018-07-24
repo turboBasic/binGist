@@ -42,6 +42,14 @@ $ New-BinaryGist -Path screenshot.png -Description 'Screenshot'
 ...
 to https://gist.github.com/295602c25d587e637d5cc8279e449a5b.git
 $ Get-Gist 295602c25d587e637d5cc8279e449a5b
+Owner       : XXXXXXXXXX
+Description : [ConvertFrom-GithubOAuthToken] :: Converts Github OAuth token to Xml
+Id          : 55558e890b43f43a13e19954304de7e
+CreatedAt   : 2018-07-25 0:54:52
+UpdatedAt   : 2018-07-25 0:54:52
+Public      : True
+HtmlUrl     : https://gist.github.com/555578e890b43f43a13e19954304de7e
+Files       : ConvertFrom-GithubOAuthToken.ps1
 ```
 
 [hexagram]: https://gist.githubusercontent.com/TurboBasic/9dfd228781a46c7b7076ec56bc40d5ab/raw/03942052ba28c4dc483efcd0ebf4bfc6809ed0d0/hexagram3D.png 'hexagram of Wisdom'
