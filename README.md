@@ -37,18 +37,17 @@ History of releases and all downloads are available at [Powershell Gallery]( htt
 ## Usage
 
 ```
-$ using module PSGist
 $ New-BinaryGist -Path screenshot.png -Description 'Screenshot'
 ...
-to https://gist.github.com/295602c25d587e637d5cc8279e449a5b.git
-$ Get-Gist 295602c25d587e637d5cc8279e449a5b
+to https://gist.github.com/295602c25d587e637d5cc827eeeeffff.git
+$ Get-Gist 295602c25d587e637d5cc827eeeeffff
 Owner       : XXXXXXXXXX
 Description : Screenshot
-Id          : 295602c25d587e637d5cc8279e449a5b
+Id          : 295602c25d587e637d5cc827eeeeffff
 CreatedAt   : 2018-07-27 21:54:52
 UpdatedAt   : 2018-07-27 21:54:52
-Public      : True
-HtmlUrl     : https://gist.github.com/295602c25d587e637d5cc8279e449a5b
+Public      : False
+HtmlUrl     : https://gist.github.com/295602c25d587e637d5cc827eeeeffff
 Files       : screenshot.png
 ```
 
